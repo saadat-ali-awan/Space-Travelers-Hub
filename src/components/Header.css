@@ -1,0 +1,37 @@
+.header-container,
+.header-inner,
+.header-logo,
+.header-nav,
+.header-nav ul {
+  display: flex;
+}
+
+.header-inner {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header-logo {
+  align-items: center;
+}
+
+.header-nav {
+  align-items: center;
+}
+
+.header-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 5px;
+}
+
+.header-nav ul li:last-child::before {
+  padding-right: 5px;
+  content: '|';
+}
+
+.header-logo img{
+  width: 50px;
+  height: 50px;
+}
