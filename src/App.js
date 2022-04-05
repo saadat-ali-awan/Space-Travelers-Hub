@@ -1,19 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Header from './components/Header';
+import Rockets from './components/rockets/rockets';
+import { getRocketsData } from './redux/rockets/rockets';
 import Dragons from './components/Dragons';
 
-const App = () => (
-  <Router>
-    <Header />
-    <Routes>
-      <Route path="/" element={<h1>hi</h1>} />
-      <Route path="/rockets" element={<h1>rockets</h1>} />
-      <Route path="/dragons" element={<Dragons />} />
-      <Route path="/missions" element={<h1>missions</h1>} />
-      <Route path="/profile" element={<h1>profile</h1>} />
-    </Routes>
-  </Router>
-);
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getRocketsData());
+  }, []);
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/rockets" element={<Rockets />} />
+        <Route path="/dragons" element={<Dragons />} />
+        <Route path="/missions" element={<h1>missions</h1>} />
+        <Route path="/profile" element={<h1>profile</h1>} />
+      </Routes>
+    </Router>
+  );
+};
 
 export default App;
