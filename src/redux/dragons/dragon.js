@@ -5,8 +5,25 @@ const DRAGONS_API = 'https://api.spacexdata.com/v3/dragons';
 
 const dragonReducer = (state = {}, action) => {
   switch (action.type) {
-    case 'ANY_TYPE':
-      return state;
+    case FETCH_DRAGONS_BEGAN:
+      return {
+        status: 'FETCHING_DRAGONS',
+      };
+    case FETCH_DRAGONS_FAILED:
+      return {
+        status: 'FETCHING_FAILED',
+        error: action.error,
+      };
+    case FETCH_DRAGONS_SUCCEEDED:
+      return {
+        status: 'FETCHING_SUCCEEDED',
+        dragons: action.payload.map((dragon) => ({
+          id: dragon.id,
+          name: dragon.name,
+          type: dragon.type,
+          flickr_images: dragon.flickr_images[0],
+        })),
+      };
     default:
       return state;
   }
