@@ -49,7 +49,7 @@ const fetchDragonsSucess = (data) => (
   }
 );
 
-export const fetchDragonsDate = () => async (dispatch) => {
+export const fetchDragonsData = () => async (dispatch) => {
   dispatch(fetchDragonsBegin());
   try {
     const dragonsResponse = await fetch(DRAGONS_API);
