@@ -1,4 +1,5 @@
-const dragonReducer = (state, action) => {
+const initialState = {};
+const dragonReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ANY_TYPE':
       return state;
