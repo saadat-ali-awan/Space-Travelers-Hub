@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rocketsReducer from './rockets/rockets';
 import dragonReducer from './dragons/dragon';
@@ -15,7 +16,7 @@ const logger = createLogger();
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(logger, thunk),
+  composeWithDevTools(applyMiddleware(logger, thunk)),
 );
 
 export default store;
