@@ -1,4 +1,5 @@
-const missonsReducer = (state, action) => {
+const initialState = {};
+const missonsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ANY_TYPE':
       return state;
