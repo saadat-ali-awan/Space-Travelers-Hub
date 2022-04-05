@@ -5,11 +5,13 @@ import Header from './components/Header';
 import Rockets from './components/rockets/rockets';
 import { getRocketsData } from './redux/rockets/rockets';
 import Dragons from './components/Dragons';
+import { fetchDragonsData } from './redux/dragons/dragon';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRocketsData());
+    dispatch(fetchDragonsData());
   }, []);
   return (
     <Router>

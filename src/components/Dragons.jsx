@@ -1,14 +1,8 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchDragonsData } from '../redux/dragons/dragon';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Dragons = () => {
   const dragonsList = useSelector((state) => state.dragonReducer);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (dragonsList.status !== 'FETCHING_SUCCEEDED') dispatch(fetchDragonsData());
-  }, []);
 
   return (
     <div>
