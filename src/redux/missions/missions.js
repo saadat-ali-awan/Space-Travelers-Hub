@@ -1,10 +1,13 @@
-const initialState = {};
-const missonsReducer = (state = initialState, action) => {
+const initialState = [];
+
+const GET_DATA_MISSIONS = 'GET_DATA_MISSIONS';
+
+const MissionReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'ANY_TYPE':
-      return state;
+    case GET_DATA_MISSIONS:
+      return [...state, action.data];
     default:
       return state;
   }
 };
-export default missonsReducer;
+export default MissionReducer;
