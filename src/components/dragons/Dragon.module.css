@@ -1,0 +1,47 @@
+button {
+  cursor: pointer;
+}
+
+.dragonWrapper {
+  display: flex;
+  padding: 12px;
+  gap: 12px;
+}
+
+.dragonImage {
+  width: 250px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.dragonWrapper h2 {
+  margin: 0;
+}
+
+.dragonWrapper p {
+  margin: 12px 0;
+}
+
+.dragonWrapper span {
+  text-transform: capitalize;
+  font-weight: bold;
+  margin-right: 6px;
+}
+
+.dragonButton {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+}
+
+.dragonButton:hover {
+  background-color: lightgray;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.dragonButton:active {
+  background-color: #94aac0;
+}

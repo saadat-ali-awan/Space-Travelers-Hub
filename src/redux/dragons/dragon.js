@@ -21,6 +21,7 @@ const dragonReducer = (state = {}, action) => {
           id: dragon.id,
           name: dragon.name,
           type: dragon.type,
+          description: dragon.description,
           flickr_images: dragon.flickr_images[0],
         })),
       };
