@@ -4,12 +4,12 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rocketsReducer from './rockets/rockets';
 import dragonReducer from './dragons/dragon';
-import missonsReducer from './missions/missions';
+import missionReducer from './missions/missions';
 
 const rootReducer = combineReducers({
   rocketsReducer,
   dragonReducer,
-  missonsReducer,
+  missionReducer,
 });
 
 const logger = createLogger();
