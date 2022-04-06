@@ -1,6 +1,7 @@
 const FETCH_DRAGONS_BEGAN = 'space-travelers-hub/dragons/FETCH_DRAGONS_BEGAN';
 const FETCH_DRAGONS_FAILED = 'space-travelers-hub/dragons/FETCH_DRAGONS_FAILED';
 const FETCH_DRAGONS_SUCCEEDED = 'space-travelers-hub/dragons/FETCH_DRAGONS_SUCCEEDED';
+const RESERVED_DRAGON = 'space-travelers-hub/dragons/RESERVED_DRAGON';
 const DRAGONS_API = 'https://api.spacexdata.com/v3/dragons';
 
 const dragonReducer = (state = {}, action) => {
@@ -23,7 +24,16 @@ const dragonReducer = (state = {}, action) => {
           type: dragon.type,
           description: dragon.description,
           flickr_images: dragon.flickr_images[0],
+          reserved: false,
         })),
+      };
+    case RESERVED_DRAGON:
+      return {
+        status: state.status,
+        dragons: state.dragons.map((dragon) => (dragon.id === action.id
+          ? { ...dragon, reserved: true }
+          : dragon
+        )),
       };
     default:
       return state;
@@ -62,5 +72,12 @@ export const fetchDragonsData = () => async (dispatch) => {
     dispatch(fetchDragonsFailed(error));
   }
 };
+
+export const reserveDragon = (id) => (
+  {
+    type: RESERVED_DRAGON,
+    id,
+  }
+);
 
 export default dragonReducer;

@@ -28,9 +28,9 @@ const Dragons = () => {
   const renderState = () => {
     switch (dragonsList.status) {
       case 'FETCHING_DRAGONS':
-        return <li>LOADING...</li>;
+        return <li><h1>LOADING...</h1></li>;
       case 'FETCHING_FAILED':
-        return <li>{`Something went wrong: ${dragonsList.error}`}</li>;
+        return <li><h1>{`Something went wrong: ${dragonsList.error}`}</h1></li>;
       case 'FETCHING_SUCCEEDED':
         return dragonsList.dragons.map((item) => (
           <li key={item.id}>
@@ -40,11 +40,12 @@ const Dragons = () => {
               type={item.type}
               description={item.description}
               image={item.flickr_images}
+              reserved={item.reserved}
             />
           </li>
         ));
       default:
-        return <li>Unexpected behavior</li>;
+        return <li><h1>Unexpected behavior</h1></li>;
     }
   };
 

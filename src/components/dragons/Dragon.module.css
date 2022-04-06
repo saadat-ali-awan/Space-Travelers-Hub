@@ -39,9 +39,24 @@ button {
 .dragonButton:hover {
   background-color: lightgray;
   color: #007bff;
-  font-weight: bold;
 }
 
 .dragonButton:active {
+  background-color: #94aac0;
+}
+
+.dragonButtonCancel {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+  padding: 7px 13px;
+  border-radius: 4px;
+}
+
+.dragonButtonCancel:hover {
+  background-color: lightgray;
+}
+
+.dragonButtonCancel:active {
   background-color: #94aac0;
 }
