@@ -17,16 +17,16 @@ export const getMissionData = () => async (dispatch) => {
   ));
   dispatch({
     type: GET_DATA_MISSIONS,
-    data,
+    payload: data,
   });
 };
 
-const MissionReducer = (state = initialState, action) => {
+const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA_MISSIONS:
-      return [...state, action.data];
+      return [...state, action.payload];
     default:
       return state;
   }
 };
-export default MissionReducer;
+export default missionReducer;
