@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { reserveRocket } from '../../redux/rockets/rockets';
+import { cancelReservation, reserveRocket } from '../../redux/rockets/rockets';
 import styles from './rockets.module.css';
 
 const rockets = () => {
@@ -9,6 +9,10 @@ const rockets = () => {
 
   function reserveRocketHandler(key) {
     dispatch(reserveRocket(key));
+  }
+
+  function cancelReservationHandler(key) {
+    dispatch(cancelReservation(key));
   }
 
   return (
@@ -22,7 +26,10 @@ const rockets = () => {
             <div>
               <h3 className={styles['rocket-heading']}>{rocket.name}</h3>
               <p className={styles['rocket-description']}>{rocket.description}</p>
-              <button className={styles['rocket-button']} onClick={() => { reserveRocketHandler(rocket.key); }} type="button">Reserve Rocket</button>
+              {
+                rocket.reserved ? (<button className={styles['rocket-button']} onClick={() => { cancelReservationHandler(rocket.key); }} type="button">Cancel Reservation</button>)
+                  : (<button className={styles['rocket-button']} onClick={() => { reserveRocketHandler(rocket.key); }} type="button">Reserve Rocket</button>)
+              }
             </div>
           </div>
         ))
