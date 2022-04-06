@@ -6,7 +6,7 @@ const rockets = () => {
   return (
     <main className={styles['rockets-container']}>
       {
-        rocketsList[0].map((rocket) => (
+        rocketsList.map((rocket) => (
           <div key={`${rocket.key}-item`} className={styles['rocket-details']}>
             <div>
               <img src={`${rocket.flickr_images[0]}`} alt="Rocket" className={styles['rocket-img']} />
