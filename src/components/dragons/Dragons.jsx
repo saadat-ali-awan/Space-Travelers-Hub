@@ -40,6 +40,7 @@ const Dragons = () => {
               type={item.type}
               description={item.description}
               image={item.flickr_images}
+              reserved={item.reserved}
             />
           </li>
         ));
