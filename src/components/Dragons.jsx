@@ -18,6 +18,7 @@ const Dragons = () => {
               id={item.id}
               name={item.name}
               type={item.type}
+              description={item.description}
               image={item.flickr_images}
             />
           </li>
