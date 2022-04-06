@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Dragon.module.css';
 
 const Dragon = ({
   id, name, type, image, description,
 }) => (
-  <div id={id}>
-    <img src={image} alt="Dragon" />
+  <div id={id} className={styles.dragonWrapper}>
+    <img src={image} alt="Dragon" className={styles.dragonImage} />
     <div>
-      <h1>
+      <h2>
         {name}
-      </h1>
+      </h2>
       <p>
         <span>{type}</span>
         {description}
       </p>
-      <button type="button">
+      <button type="button" className={styles.dragonButton}>
         Reserve Dragon
       </button>
     </div>

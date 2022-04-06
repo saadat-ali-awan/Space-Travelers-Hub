@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Header from './components/Header';
 import Rockets from './components/rockets/rockets';
 import { getRocketsData } from './redux/rockets/rockets';
-import Dragons from './components/Dragons';
+import Dragons from './components/dragons/Dragons';
 import { fetchDragonsData } from './redux/dragons/dragon';
 
 const App = () => {
