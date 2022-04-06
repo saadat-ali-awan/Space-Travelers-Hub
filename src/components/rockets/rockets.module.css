@@ -42,3 +42,18 @@
   border: 0;
   border-radius: 4px;
 }
+
+.reserved {
+  background-color: #19a3b9;
+  color: #fff;
+  padding: 0 2px;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+.cancel-button {
+  background-color: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
