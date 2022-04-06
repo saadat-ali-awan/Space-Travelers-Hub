@@ -25,9 +25,12 @@ const rockets = () => {
             </div>
             <div>
               <h3 className={styles['rocket-heading']}>{rocket.name}</h3>
-              <p className={styles['rocket-description']}>{rocket.description}</p>
+              <p className={styles['rocket-description']}>
+                {rocket.reserved && (<span className={styles.reserved}>Reserved</span>) }
+                {rocket.description}
+              </p>
               {
-                rocket.reserved ? (<button className={styles['rocket-button']} onClick={() => { cancelReservationHandler(rocket.key); }} type="button">Cancel Reservation</button>)
+                rocket.reserved ? (<button className={`${styles['rocket-button']} ${styles['cancel-button']}`} onClick={() => { cancelReservationHandler(rocket.key); }} type="button">Cancel Reservation</button>)
                   : (<button className={styles['rocket-button']} onClick={() => { reserveRocketHandler(rocket.key); }} type="button">Reserve Rocket</button>)
               }
             </div>
