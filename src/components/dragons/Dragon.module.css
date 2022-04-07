@@ -70,3 +70,14 @@ button {
 .dragonButtonCancel:active {
   background-color: #94aac0;
 }
+
+@media (max-width: 780px) {
+  .dragonWrapper {
+    flex-direction: column;
+  }
+
+  .dragonImage {
+    width: 100%;
+    height: auto;
+  }
+}
