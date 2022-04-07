@@ -1,8 +1,8 @@
 const initialState = [];
 
-const GET_DATA_MISSIONS = 'GET_DATA_MISSIONS';
-const JOIN_MISSION = 'JOIN_MISSION';
-const LEAVE_MISSION = 'LEAVE_MISSION';
+export const GET_DATA_MISSIONS = 'GET_DATA_MISSIONS';
+export const JOIN_MISSION = 'JOIN_MISSION';
+export const LEAVE_MISSION = 'LEAVE_MISSION';
 
 export const getMissionData = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/missions', {
