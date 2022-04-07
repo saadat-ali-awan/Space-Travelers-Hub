@@ -8,6 +8,7 @@ import Dragons from './components/dragons/Dragons';
 import { fetchDragonsData } from './redux/dragons/dragon';
 import Missions from './components/missions/missions';
 import { getMissionData } from './redux/missions/missions';
+import Profile from './components/profile/Profile';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const App = () => {
         <Route path="/rockets" element={<Rockets />} />
         <Route path="/dragons" element={<Dragons />} />
         <Route path="/missions" element={<Missions />} />
-        <Route path="/profile" element={<h1>profile</h1>} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );
