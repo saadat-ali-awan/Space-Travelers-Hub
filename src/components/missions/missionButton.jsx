@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { joinMission } from '../../redux/missions/missions';
+import { joinMission, leaveMission } from '../../redux/missions/missions';
 
 const MissionButton = (props) => {
   const { reserved, id } = props;
@@ -9,6 +9,9 @@ const MissionButton = (props) => {
 
   const joinMissionButton = () => {
     dispatch(joinMission(id));
+  };
+  const leaveMissionButton = () => {
+    dispatch(leaveMission(id));
   };
 
   return (
@@ -23,7 +26,7 @@ const MissionButton = (props) => {
         </Button>
       )}
       {reserved && (
-        <Button className="text-nowrap" variant="outline-danger">Leave Mission</Button>
+        <Button className="text-nowrap" variant="outline-danger" onClick={leaveMissionButton}>Leave Mission</Button>
       )}
     </>
   );

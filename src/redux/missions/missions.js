@@ -28,6 +28,11 @@ export const joinMission = (id) => ({
   id,
 });
 
+export const leaveMission = (id) => ({
+  type: LEAVE_MISSION,
+  id,
+});
+
 const missionReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA_MISSIONS:
