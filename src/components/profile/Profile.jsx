@@ -3,6 +3,7 @@ import styles from './Profile.module.css';
 
 const Profile = () => {
   const rockets = useSelector((state) => state.rocketsReducer);
+  const dragons = useSelector((state) => state.dragonReducer);
   return (
     <div className={styles.default}>
       <div>
@@ -14,6 +15,14 @@ const Profile = () => {
             ))
           }
         </ul>
+        <h3>My Dragons</h3>
+        {dragons.status === 'FETCHING_SUCCEEDED' && (
+          <ul className={styles.rockets}>
+            {dragons.dragons.filter((dragon) => dragon.reserved).map((dragon) => (
+              <li key={dragon.id} className={styles.listItem}>{dragon.name}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
