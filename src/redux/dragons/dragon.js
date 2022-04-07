@@ -49,20 +49,20 @@ const dragonReducer = (state = {}, action) => {
   }
 };
 
-const fetchDragonsBegin = () => (
+export const fetchDragonsBegin = () => (
   {
     type: FETCH_DRAGONS_BEGAN,
   }
 );
 
-const fetchDragonsFailed = (error) => (
+export const fetchDragonsFailed = (error) => (
   {
     type: FETCH_DRAGONS_FAILED,
     error,
   }
 );
 
-const fetchDragonsSucess = (data) => (
+export const fetchDragonsSucess = (data) => (
   {
     type: FETCH_DRAGONS_SUCCEEDED,
     payload: data,
