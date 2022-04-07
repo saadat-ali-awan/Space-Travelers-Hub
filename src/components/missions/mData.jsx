@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MissionButton from './missionButton';
+import Member from './Member';
 
 const MissionData = (props) => {
   const { mission } = props;
@@ -14,7 +15,7 @@ const MissionData = (props) => {
         <p>{mission.description}</p>
       </td>
       <td className="align-middle">
-        <p className="badge bg-secondary text-nowrap">NOT A MEMBER</p>
+        <Member reserved={mission.reserved} />
       </td>
       <td className="align-middle">
         <MissionButton id={mission.id} reserved={mission.reserved} />
