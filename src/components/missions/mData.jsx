@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import PropTypes from 'prop-types';
+import MissionButton from './missionButton';
 
 const MissionData = (props) => {
   const { mission } = props;
@@ -17,7 +17,7 @@ const MissionData = (props) => {
         <p className="badge bg-secondary text-nowrap">NOT A MEMBER</p>
       </td>
       <td className="align-middle">
-        <Button className="text-nowrap" variant="outline-secondary">Join Mission</Button>
+        <MissionButton id={mission.id} reserved={mission.reserved} />
       </td>
     </tr>
   );
@@ -27,6 +27,8 @@ MissionData.propTypes = {
   mission: PropTypes.shape({
     name: PropTypes.string,
     description: PropTypes.string,
+    id: PropTypes.string,
+    reserved: PropTypes.bool,
   }).isRequired,
 };
 
