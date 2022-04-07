@@ -7,12 +7,14 @@ import { getRocketsData } from './redux/rockets/rockets';
 import Dragons from './components/dragons/Dragons';
 import { fetchDragonsData } from './redux/dragons/dragon';
 import Missions from './components/missions/missions';
+import { getMissionData } from './redux/missions/missions';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getRocketsData());
     dispatch(fetchDragonsData());
+    dispatch(getMissionData());
   }, []);
   return (
     <Router>

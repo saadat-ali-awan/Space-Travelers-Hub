@@ -2,6 +2,7 @@ const initialState = [];
 
 const GET_DATA_MISSIONS = 'GET_DATA_MISSIONS';
 const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
 export const getMissionData = () => async (dispatch) => {
   const response = await fetch('https://api.spacexdata.com/v3/missions', {
@@ -35,6 +36,11 @@ const missionReducer = (state = initialState, action) => {
       return state.map((mission) => {
         if (mission.id !== action.id) return mission;
         return { ...mission, reserved: true };
+      });
+    case LEAVE_MISSION:
+      return state.map((mission) => {
+        if (mission.id !== action.id) return mission;
+        return { ...mission, reserved: false };
       });
     default:
       return state;
