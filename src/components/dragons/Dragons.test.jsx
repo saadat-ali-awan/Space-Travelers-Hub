@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Provider, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Dragons from './Dragons';
@@ -67,5 +67,18 @@ describe('Tests for the Dragons component', () => {
     );
 
     expect(getByText(/Test_Name1/i)).toBeInTheDocument();
+  });
+
+  test('The component should display a "Reserved" badge when the user clicks the Reserve Dragon button', () => {
+    const { getByText } = render(
+      <Provider store={store}>
+        <TestContainer action="FETCH_SUCCESS" />
+      </Provider>,
+    );
+
+    fireEvent.click(getByText(/Reserve Dragon/i));
+
+    expect(getByText(/Reserved/i)).toBeInTheDocument();
+    expect(getByText(/Cancel Reservation/i)).toBeInTheDocument();
   });
 });
