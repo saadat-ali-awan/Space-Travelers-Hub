@@ -1,7 +1,7 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import Table from 'react-bootstrap/Table';
-import { getMissionData } from '../../redux/missions/missions';
+
 import MissionData from './mData';
 import './mission.css';
 
@@ -26,10 +26,6 @@ const headList = [
 
 const Missions = () => {
   const missionsList = useSelector((state) => state.missionReducer);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getMissionData());
-  }, []);
   return (
     <div className="container-fluid missions">
       <Table striped bordered hover>

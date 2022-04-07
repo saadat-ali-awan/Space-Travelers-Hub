@@ -1,6 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
-import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
+import MissionButton from './missionButton';
+import Member from './member';
 
 const MissionData = (props) => {
   const { mission } = props;
@@ -14,13 +15,22 @@ const MissionData = (props) => {
         <p>{mission.description}</p>
       </td>
       <td className="align-middle">
-        <p className="badge bg-secondary text-nowrap">NOT A MEMBER</p>
+        <Member reserved={mission.reserved} />
       </td>
       <td className="align-middle">
-        <Button className="text-nowrap" variant="outline-secondary">Join Mission</Button>
+        <MissionButton id={mission.id} reserved={mission.reserved} />
       </td>
     </tr>
   );
+};
+
+MissionData.propTypes = {
+  mission: PropTypes.shape({
+    name: PropTypes.string,
+    description: PropTypes.string,
+    id: PropTypes.string,
+    reserved: PropTypes.bool,
+  }).isRequired,
 };
 
 export default MissionData;
