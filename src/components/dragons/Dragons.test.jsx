@@ -81,4 +81,22 @@ describe('Tests for the Dragons component', () => {
     expect(getByText(/Reserved/i)).toBeInTheDocument();
     expect(getByText(/Cancel Reservation/i)).toBeInTheDocument();
   });
+
+  test('When the user click the Cancel Reservation for a reserved item the "Reserved" badge should disappear and the button should say "Reserve Dragon"', () => {
+    const { getByText, queryByText } = render(
+      <Provider store={store}>
+        <TestContainer action="FETCH_SUCCESS" />
+      </Provider>,
+    );
+
+    fireEvent.click(getByText(/Reserve Dragon/i));
+
+    expect(getByText(/Reserved/i)).toBeInTheDocument();
+    expect(getByText(/Cancel Reservation/i)).toBeInTheDocument();
+
+    fireEvent.click(getByText(/Cancel Reservation/i));
+
+    expect(queryByText(/Reserved/i)).not.toBeInTheDocument();
+    expect(getByText(/Reserve Dragon/i)).toBeInTheDocument();
+  });
 });
