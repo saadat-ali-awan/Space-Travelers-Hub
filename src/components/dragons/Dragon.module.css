@@ -28,6 +28,16 @@ button {
   margin-right: 6px;
 }
 
+.dragonWrapper .dragonReservedBadge {
+  background-color: #19a3b9;
+  color: #fff;
+  padding: 0 2px;
+  font-size: 12px;
+  border-radius: 2px;
+  margin-right: 8px;
+  font-weight: normal;
+}
+
 .dragonButton {
   padding: 8px 14px;
   background-color: #007bff;
@@ -59,4 +69,15 @@ button {
 
 .dragonButtonCancel:active {
   background-color: #94aac0;
+}
+
+@media (max-width: 780px) {
+  .dragonWrapper {
+    flex-direction: column;
+  }
+
+  .dragonImage {
+    width: 100%;
+    height: auto;
+  }
 }

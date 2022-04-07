@@ -17,6 +17,7 @@ const Dragon = ({
           {name}
         </h2>
         <p>
+          {reserved && <span className={styles.dragonReservedBadge}>Reserved</span>}
           <span>{type}</span>
           {description}
         </p>
