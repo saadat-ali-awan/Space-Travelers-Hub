@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c35da68b-5d56-49b1-b730-f65b170e0098/deploy-status)](https://app.netlify.com/sites/space-travelers-hub-ksg/deploys)
 
 # Space Travelers' Hub
 
