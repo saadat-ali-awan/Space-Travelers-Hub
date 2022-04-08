@@ -33,8 +33,11 @@ const MissionButton = (props) => {
 };
 
 MissionButton.propTypes = {
-  reserved: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool,
   id: PropTypes.string.isRequired,
+};
+MissionButton.defaultProps = {
+  reserved: false,
 };
 
 export default MissionButton;
