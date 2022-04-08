@@ -12,10 +12,12 @@ const Profile = () => {
         <ul className={styles.rockets}>
           {
             rockets.filter((rocket) => rocket.reserved).map((rocket) => (
-              <li key={rocket.key} className={styles.listItem}>{rocket.name}</li>
+              <li key={`${rocket.key}-${rocket.id}`} className={styles.listItem}>{rocket.name}</li>
             ))
           }
         </ul>
+      </div>
+      <div>
         <h3>My Dragons</h3>
         {dragons.status === 'FETCHING_SUCCEEDED' && (
           <ul className={styles.rockets}>
@@ -24,11 +26,13 @@ const Profile = () => {
             ))}
           </ul>
         )}
+      </div>
+      <div>
         <h3>My Mission</h3>
         <ul className={styles.rockets}>
           {
             missions.filter((mission) => mission.reserved).map((mission) => (
-              <li key={mission.key} className={styles.listItem}>{mission.name}</li>
+              <li key={mission.id} className={styles.listItem}>{mission.name}</li>
             ))
           }
         </ul>

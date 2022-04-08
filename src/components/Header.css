@@ -6,6 +6,11 @@
   display: flex;
 }
 
+.header-container {
+  border-bottom: 1px solid #dfdfdf;
+  padding: 1rem 3rem;
+}
+
 .header-inner {
   justify-content: space-between;
   width: 100%;
@@ -13,6 +18,13 @@
 
 .header-logo {
   align-items: center;
+  font-size: 32px;
+  color: #000;
+  text-decoration: none;
+}
+
+.header-logo div {
+  margin-left: 1rem;
 }
 
 .header-nav {
@@ -23,11 +35,11 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  gap: 5px;
+  gap: 1rem;
 }
 
 .header-nav ul li:last-child::before {
-  padding-right: 5px;
+  padding-right: 1rem;
   content: '|';
 }
 

@@ -1,6 +1,13 @@
 .default {
   padding: 12px;
   box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.default div {
+  width: calc(50% - 24px);
+  margin: 12px;
 }
 
 .rockets {

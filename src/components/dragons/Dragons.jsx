@@ -10,7 +10,6 @@ const Dragons = () => {
     justifyContent: 'center',
     marginTop: '1rem',
     paddingTop: '1rem',
-    borderTop: '1px solid #dfdfdf',
   };
   const innerStyle = {
     display: 'flex',
