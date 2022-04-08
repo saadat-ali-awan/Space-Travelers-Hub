@@ -24,7 +24,7 @@ const Profile = () => {
             ))}
           </ul>
         )}
-        <h3>My Rockets</h3>
+        <h3>My Mission</h3>
         <ul className={styles.rockets}>
           {
             missions.filter((mission) => mission.reserved).map((mission) => (
