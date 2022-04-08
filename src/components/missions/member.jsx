@@ -15,7 +15,10 @@ const Member = (props) => {
 };
 
 Member.propTypes = {
-  reserved: PropTypes.bool.isRequired,
+  reserved: PropTypes.bool,
 };
 
+Member.defaultProps = {
+  reserved: false,
+};
 export default Member;
