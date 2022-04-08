@@ -30,7 +30,7 @@
 
 ## Live Page
 
-[Click Here](https://bookhttps://github.com/Saadat123456/Space-Travelers-Hub/)
+[Click Here](https://space-travelers-hub-ksg.netlify.app/)
 
 
 ## Getting Started
